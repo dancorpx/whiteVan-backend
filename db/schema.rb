@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 2018_08_07_022916) do
     t.integer "user_id"
   end
 
+  create_table "exchanges", force: :cascade do |t|
+    t.float "lat"
+    t.float "lng"
+    t.boolean "sold"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "buyer_id"
+    t.integer "chat_record_id"
+    t.integer "item_id"
+  end
+
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -31,17 +42,6 @@ ActiveRecord::Schema.define(version: 2018_08_07_022916) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "seller_id"
-  end
-
-  create_table "transactions", force: :cascade do |t|
-    t.float "lat"
-    t.float "lng"
-    t.boolean "sold"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "buyer_id"
-    t.integer "chat_record_id"
-    t.integer "item_id"
   end
 
   create_table "users", force: :cascade do |t|

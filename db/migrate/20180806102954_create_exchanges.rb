@@ -1,6 +1,6 @@
-class CreateTransactions < ActiveRecord::Migration[5.2]
+class CreateExchanges < ActiveRecord::Migration[5.2]
   def change
-    create_table :transactions do |t|
+    create_table :exchanges do |t|
       t.float :lat
       t.float :lng
       t.boolean :sold

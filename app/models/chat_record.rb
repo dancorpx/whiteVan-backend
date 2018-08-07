@@ -1,4 +1,4 @@
 class ChatRecord < ApplicationRecord
-  belongs_to :transaction
+  has_one :exchange
   has_many :users
 end

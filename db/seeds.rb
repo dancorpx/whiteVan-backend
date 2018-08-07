@@ -39,19 +39,19 @@ Item.create!(name: "Necklace",
     price: 30,
     seller_id: 2,
     quantity: 1)
-Transaction.create!(seller_id: 1,
+Exchange.create!(
     item_id: 4,
     buyer_id: 3,
     lat: 30.665445785643275,
     lng: 104.0931378099534,
-    sold?: false,
+    sold: false,
     chat_record_id: 1)
-Transaction.create!(seller_id: 2,
+Exchange.create!(
     item_id: 5,
     buyer_id: 1,
     lat: 30.672386202549067,
     lng: 104.10840274616338,
-    sold?: false,
+    sold: false,
     chat_record_id: 2)
 ChatRecord.create!(message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
     user_id: 2)
