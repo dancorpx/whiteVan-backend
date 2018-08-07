@@ -1,0 +1,46 @@
+class Api::V1::ExchangesController < Api::V1::BaseController
+  before_action :set_exchange, only: [:show, :update, :destroy]
+
+  def index
+    @exchanges = Exchange.all
+  end
+
+  def show
+  end
+
+  def update
+    if @exchange.update(exchange_params)
+      render :show
+    else
+      render_error
+    end
+  end
+
+  def create
+    @exchange = Exchange.new(exchange_params)
+    if @exchange.save
+      render :show, status: :created
+    else
+      render_error
+    end
+  end
+
+  def destroy
+    @exchange.destroy
+    head :no_content
+  end
+
+  private
+
+  def set_exchange
+    @exchange = Exchange.find(params[:id])
+  end
+
+  def exchange_params
+    params.require(:exchange).permit(:item_id, :buyer_id, :lat, :lng, :sold, :chat_record_id)
+  end
+
+  def render_error
+    render json: { errors: @exchange.errors.full_messages }, status: :unprocessable_entity
+  end
+end
