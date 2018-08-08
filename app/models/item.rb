@@ -5,6 +5,6 @@ class Item < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   validates :price, presence: true
-  validates :category, presence: true, inclusion: { in: %w(vehicle, clothing, jewelry, construction)}
+  validates :category, presence: true, inclusion: { in: ["Vehicle", "Clothing", "Jewelry", "Construction", "Electronics"]}
   validates :seller_id, presence: true
 end

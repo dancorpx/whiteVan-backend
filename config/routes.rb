@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       post '/login', to: 'login#login'
       resources :items, only: [ :index, :show, :update, :create, :destroy ]
-      resources :exchanges, only: [:index, :show, :update, :create, :destroy]
+      resources :exchanges, only: [:index, :show, :update, :create, :destroy] do
+        resources :chat_records, only: [:index, :create]
+      end
       resources :users, only: [:update]
     end
   end
