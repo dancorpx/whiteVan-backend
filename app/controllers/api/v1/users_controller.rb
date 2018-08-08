@@ -10,7 +10,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   private
 
    def user_params
-    params.require(:user).permit(:username, :theif_id, :area, :open_id)
+    params.require(:user).permit(:id, :username, :theif_id, :area, :open_id)
   end
 
   def render_error
