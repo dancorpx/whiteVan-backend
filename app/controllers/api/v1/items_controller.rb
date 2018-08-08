@@ -18,6 +18,7 @@ class Api::V1::ItemsController < Api::V1::BaseController
 
   def create
     @item = Item.new(item_params)
+    @item.seller = User.find(params[:seller_id])
     if @item.save
       render :show, status: :created
     else
