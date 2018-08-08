@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_07_095818) do
+ActiveRecord::Schema.define(version: 2018_08_08_063727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_08_07_095818) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.integer "exchange_id"
   end
 
   create_table "exchanges", force: :cascade do |t|
@@ -29,7 +30,6 @@ ActiveRecord::Schema.define(version: 2018_08_07_095818) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "buyer_id"
-    t.integer "chat_record_id"
     t.integer "item_id"
   end
 
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2018_08_07_095818) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "theif_id"
+    t.string "thief_id"
     t.string "area"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

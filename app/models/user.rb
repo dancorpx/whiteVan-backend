@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   validates :username, uniqueness: true
   validates :thief_id, uniqueness: true, format: { with: /20\d{10}/i, message: "please enter Thief ID in correct format"}
-  validates :area, inclusion: { in: %w(north chengdu, south chengdu, east chengdu, west chengdu)}
+  validates :area, inclusion: { in: ["north chengdu", "south chengdu", "east chengdu", "west chengdu"]}
 end
 
 

@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(username: "dan", theif_id: "201724076541", area: "north chengdu")
-User.create!(username: "callum", theif_id: "201725682152", area: "south chengdu")
-User.create!(username: "jason", theif_id: "201787056763", area: "east chengdu")
+User.create!(username: "dan", thief_id: "201724076541", area: "north chengdu")
+User.create!(username: "callum", thief_id: "201725682152", area: "south chengdu")
+User.create!(username: "jason", thief_id: "201787056763", area: "east chengdu")
 Item.create!(name: "Motorbike",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, voluptatibus.",
     category: "Vehicle",
@@ -35,7 +35,7 @@ Item.create!(name: "Iphone X",
     quantity: 2)
 Item.create!(name: "Necklace",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, voluptatibus.",
-    category: "Jewlery",
+    category: "Jewelry",
     price: 30,
     seller_id: 2,
     quantity: 1)
@@ -44,16 +44,16 @@ Exchange.create!(
     buyer_id: 3,
     lat: 30.665445785643275,
     lng: 104.0931378099534,
-    sold: false,
-    chat_record_id: 1)
+    sold: false)
 Exchange.create!(
     item_id: 5,
     buyer_id: 1,
     lat: 30.672386202549067,
     lng: 104.10840274616338,
-    sold: false,
-    chat_record_id: 2)
+    sold: false)
 ChatRecord.create!(message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-    user_id: 2)
+    user_id: 2,
+    exchange_id: 1)
 ChatRecord.create!(message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-    user_id: 4)
+    user_id: 1,
+    exchange_id: 2)

@@ -3,6 +3,7 @@ class Api::V1::ExchangesController < Api::V1::BaseController
 
   def index
     @exchanges = Exchange.all
+
   end
 
   def show
@@ -37,7 +38,7 @@ class Api::V1::ExchangesController < Api::V1::BaseController
   end
 
   def exchange_params
-    params.require(:exchange).permit(:item_id, :buyer_id, :lat, :lng, :sold, :chat_record_id)
+    params.require(:exchange).permit(:item_id, :buyer_id, :lat, :lng, :sold)
   end
 
   def render_error
