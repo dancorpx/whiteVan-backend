@@ -3,8 +3,8 @@ class Api::V1::LoginController < Api::V1::BaseController
 
   def wechat_params
     {
-      appid: appId,
-      secret: appSecret,
+      appid: "#{ENV['APP_ID']}",
+      secret: "#{ENV['APP_SECRET']}",
       js_code: params[:code],
       grant_type: "authorization_code"
     }
