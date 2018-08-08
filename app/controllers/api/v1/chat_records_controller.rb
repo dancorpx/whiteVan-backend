@@ -19,7 +19,7 @@ class Api::V1::ChatRecordsController < Api::V1::BaseController
   private
 
    def message_params
-    params.require(:chat_records).permit(:message, :user_id, :exchange_id)
+    params.require(:chat_record).permit(:message, :user_id, :exchange_id)
    end
 end
 
