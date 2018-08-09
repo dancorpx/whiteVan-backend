@@ -2,7 +2,11 @@ class Api::V1::ItemsController < Api::V1::BaseController
   before_action :set_item, only: [:show, :update, :destroy]
 
   def index
-    @items = Item.all
+    if params[:query].present?
+      @items = Item.where(seller_id: params[:query])
+    else
+       @items = Item.all
+    end
   end
 
   def show
