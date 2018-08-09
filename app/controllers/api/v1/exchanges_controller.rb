@@ -2,8 +2,8 @@ class Api::V1::ExchangesController < Api::V1::BaseController
   before_action :set_exchange, only: [:show, :update, :destroy]
 
   def index
-    if params[:query].present?
-      @exchanges = Exchange.where(buyer_id: params[:query])
+    if params[:buyer_id].present?
+      @exchanges = Exchange.where(buyer_id: params[:buyer_id])
     else
       @exchanges = Exchange.all
     end
