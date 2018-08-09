@@ -22,8 +22,6 @@ class Api::V1::ExchangesController < Api::V1::BaseController
 
   def create
     @exchange = Exchange.new(exchange_params)
-    @exchange.item = Item.find(params[:item_id])
-    @exchange.buyer = User.find(params[:buyer_id])
     if @exchange.save
       render :show, status: :created
     else
