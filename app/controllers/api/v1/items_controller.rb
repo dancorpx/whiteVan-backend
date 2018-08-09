@@ -2,8 +2,8 @@ class Api::V1::ItemsController < Api::V1::BaseController
   before_action :set_item, only: [:show, :update, :destroy]
 
   def index
-    if params[:query].present?
-      @items = Item.where(seller_id: params[:query])
+    if params[:seller_id].present?
+      @items = Item.where(seller_id: params[:seller_id])
     else
        @items = Item.all
     end
